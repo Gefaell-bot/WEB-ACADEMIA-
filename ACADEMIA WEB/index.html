@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yes! La Academia — Inglés en Tetuán, Madrid</title>
+<meta name="description" content="17 años enseñando inglés en Tetuán, Madrid. Clases para niños, adolescentes, adultos y empresas. Especialistas en exámenes Cambridge. Prueba de nivel gratis.">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+<link rel="apple-touch-icon" href="assets/images/logo.png">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Fredoka:wght@500;600;700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">
+      <img class="brand-logo" src="assets/images/logo.png" alt="Yes! La Academia">
+    </a>
+    <nav class="links">
+      <a href="#cursos">Cursos</a>
+      <a href="#cambridge">Cambridge</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#faq">Preguntas frecuentes</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#contacto" class="btn btn-primary btn-sm">Prueba gratis</a>
+      <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer" id="menuOpen">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-drawer" id="drawer" aria-hidden="true">
+  <div class="top">
+    <a href="#top" class="brand"><img class="brand-logo" src="assets/images/logo.png" alt="Yes! La Academia"></a>
+    <button class="menu-btn" aria-label="Cerrar menú" aria-controls="drawer" id="menuClose">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="#cursos">Cursos</a>
+    <a href="#cambridge">Cambridge</a>
+    <a href="#equipo">Equipo</a>
+    <a href="#opiniones">Opiniones</a>
+    <a href="#faq">Preguntas frecuentes</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <div class="foot">
+    <a href="tel:+34910160934" class="btn btn-ghost">910 160 934</a>
+    <a href="#contacto" class="btn btn-primary">Prueba de nivel gratis</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill-eyebrow reveal" data-anim="up">Tetuán, Madrid · desde 2009</span>
+      <h1 class="reveal" data-anim="up">Inglés que se adapta a cada alumno.</h1>
+      <p class="lede reveal" data-anim="up"><strong>Niños · Adolescentes · Adultos · Cambridge · Apoyo escolar</strong><br><strong>Grupos reducidos y seguimiento personalizado en Tetuán.</strong><br>Contáctanos y te hacemos una prueba de nivel gratuita y sin compromiso.</p>
+      <div class="hero-cta reveal" data-anim="up">
+        <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+        <a href="#cursos" class="btn btn-ghost">Ver todos los cursos</a>
+      </div>
+      <div class="hero-stats reveal" data-anim="up">
+        <div class="stat"><b>17</b><span>años en el barrio</span></div>
+        <div class="stat"><b>95%</b><span>aprobados Cambridge</span></div>
+        <div class="stat"><b>4,9</b><span>+270 reseñas Google</span></div>
+      </div>
+    </div>
+
+    <div class="reveal" data-anim="scale">
+      <div class="hero-visual">
+        <figure class="hero-photo">
+          <img src="assets/images/hero-learning.jpg" alt="Alumnos aprendiendo en una clase de idiomas" loading="eager">
+          <figcaption><strong>Aprender acompañado</strong><span>Clases cercanas y grupos pequeños</span></figcaption>
+        </figure>
+      <div class="chat-card">
+        <div class="chat-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>Yes! La Academia</span></div>
+        <div class="chat-body" id="chatBody">
+          <div class="bubble me" id="b1">¿Se puede aprender inglés sin morir de vergüenza?</div>
+          <div class="typing" id="t1"><i></i><i></i><i></i></div>
+          <div class="bubble them" id="b2">Yes! Llevamos 17 años haciendo justo eso.</div>
+          <div class="bubble me" id="b3">Tengo 13 años y me da corte hablar en clase...</div>
+          <div class="typing" id="t2"><i></i><i></i><i></i></div>
+          <div class="bubble them" id="b4">Grupos de tu edad y profes cercanos. En pocas clases ya estás hablando.</div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a class="whatsapp-float" href="https://wa.me/34692175578?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20clases%20y%20la%20prueba%20de%20nivel%20gratuita." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.08 0C5.55 0 .23 5.32.23 11.86c0 2.09.55 4.13 1.59 5.93L.13 24l6.36-1.67a11.9 11.9 0 0 0 5.59 1.42h.01c6.53 0 11.85-5.32 11.85-11.86 0-3.17-1.23-6.15-3.44-8.39ZM12.09 21.7h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.77.99 1.01-3.68-.23-.38a9.84 9.84 0 0 1-1.51-5.18C2.19 6.43 6.62 2 12.09 2c2.65 0 5.14 1.03 7.01 2.91a9.84 9.84 0 0 1 2.9 7.01c0 5.47-4.44 9.9-9.91 9.9Zm5.43-7.41c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.23-.65.08-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.67-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.64-.93-2.25-.24-.59-.49-.51-.68-.52h-.58c-.2 0-.53.08-.81.38-.28.3-1.06 1.03-1.06 2.51s1.09 2.91 1.24 3.11c.15.2 2.15 3.28 5.2 4.6.73.32 1.3.51 1.74.65.73.23 1.4.2 1.93.12.59-.09 1.77-.73 2.02-1.44.25-.71.25-1.32.18-1.44-.08-.13-.28-.2-.58-.35Z"/></svg>
+</a>
+
+<div class="marquee">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<!-- ============ CONOCE LA ACADEMIA ============ -->
+<section class="sec academy-media">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill-eyebrow">Conoce la academia</span>
+      <h2>Un espacio para aprender, practicar y avanzar</h2>
+      <p>Clases dinámicas, grupos reducidos y acompañamiento cercano para todas las edades.</p>
+    </div>
+    <div class="media-grid">
+      <figure class="media-card media-promo">
+        <img src="assets/images/academy-promo.jpg" alt="Alumnos de Yes! La Academia aprendiendo en clase" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METODO ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill-eyebrow">Por qué nosotros</span>
+      <h2>Todo lo que hace que quieras venir a clase</h2>
+      <p>Esto es lo que nos hace diferentes, contado como si te lo dijéramos por chat.</p>
+    </div>
+    <figure class="academy-photo">
+      <img src="assets/images/academy-study.jpg" alt="Personas estudiando en un entorno académico" loading="lazy">
+      <figcaption>Un espacio pensado para aprender con confianza</figcaption>
+    </figure>
+    <div class="method-wrap">
+      <div class="msg reveal" data-anim="left">
+        <div class="av">01</div>
+        <div class="bubble2"><h4>Tu profe, siempre disponible</h4><p>Le escribes por email cuando te surge una duda fuera de clase, y te responde directo. Sin esperas raras.</p></div>
+      </div>
+      <div class="msg alt reveal" data-anim="right">
+        <div class="av">02</div>
+        <div class="bubble2"><h4>Aulas libres fuera de horario</h4><p>Somos la única academia del barrio que te deja usar sus aulas gratis para estudiar o quedar en grupo.</p></div>
+      </div>
+      <div class="msg reveal" data-anim="left">
+        <div class="av">03</div>
+        <div class="bubble2"><h4>Biblioteca y videoteca propias</h4><p>+100 libros y +150 pelis en versión original. Libros un mes, pelis una semana, todo en préstamo.</p></div>
+      </div>
+      <div class="msg alt reveal" data-anim="right">
+        <div class="av">04</div>
+        <div class="bubble2"><h4>Prueba de nivel gratis</h4><p>Antes de nada, hacemos un test sin coste para saber dónde estás de verdad, no por edad, sino por nivel.</p></div>
+      </div>
+      <div class="msg reveal" data-anim="left">
+        <div class="av">05</div>
+        <div class="bubble2"><h4>Informes para las familias</h4><p>Si eres peque o adolescente, cada 3 meses tus padres reciben un informe real de tu progreso.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CURSOS ============ -->
+<section class="sec" id="cursos" style="border-top:2px solid var(--line); border-bottom:2px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill-eyebrow">Cursos</span>
+      <h2>Tu curso ideal</h2>
+      <p>Desde peques de 6 años hasta empresas enteras. Toca una categoría para ver sus cursos, precios y horarios.</p>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div class="course-grid" id="courseGrid"></div>
+  </div>
+</section>
+
+<!-- ============ CAMBRIDGE ============ -->
+<section class="sec cambridge" id="cambridge">
+  <div class="wrap camb-grid">
+    <div class="reveal" data-anim="left">
+      <span class="pill-eyebrow">Exámenes oficiales</span>
+      <div class="big-stat" style="margin-top:1rem;">
+        <b>95%</b>
+        <span>de aprobados en los cursos intensivos de Cambridge. En el resto de preparaciones oficiales, un 90%.</span>
+      </div>
+      <p style="color:var(--ink-soft); font-size:.92rem; margin-top:1.3rem; max-width:34ch;">Muchos de nuestros profes han sido examinadores orales de Cambridge, así que saben exactamente qué se juega el día del examen.</p>
+    </div>
+    <div>
+      <p style="color:var(--ink-soft);font-size:.9rem;margin:0 0 .9rem;font-weight:700;">Toca un examen para ver cómo es:</p>
+      <div class="seals" id="examBtns"></div>
+      <div class="exam-panel" id="examPanel"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="garantia">
+  <div class="wrap">
+    <div class="guarantee reveal" data-anim="scale">
+      <div>
+        <span class="pill-eyebrow">Garantía de aprobado</span>
+        <h3>¿No apruebas? 2 meses de clases gratis.</h3>
+        <p>Si preparas tu PET, FCE, CAE o IELTS en grupo con nosotros y no lo consigues, sigues preparándote sin coste. Horarios a demanda: si no hay grupo que te encaje, abrimos uno.</p>
+        <a class="btn btn-primary guarantee-cta" href="#contacto">Quiero informarme</a>
+      </div>
+      <ul>
+        <li>Haber asistido al menos 2 trimestres, sin faltar a más del 20% de las clases.</li>
+        <li>Presentarte al examen en los plazos que te indiquemos.</li>
+        <li>No incluye las tasas del examen. Se aplica una sola vez por alumno.</li>
+        <li>Las clases gratuitas se disfrutan dentro del curso octubre–junio.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO EMPEZAR ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill-eyebrow">Sin líos</span>
+      <h2>Empezar es más fácil de lo que crees</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal" data-anim="up"><div class="num">1</div><h4>Nos escribes</h4><p>Por WhatsApp, teléfono o el formulario de aquí abajo.</p></div>
+      <div class="step reveal" data-anim="up"><div class="num">2</div><h4>Prueba de nivel gratis</h4><p>30 minutos, presencial u online, para saber de verdad dónde estás.</p></div>
+      <div class="step reveal" data-anim="up"><div class="num">3</div><h4>Entras a tu grupo</h4><p>Con gente de tu nivel real y el horario que mejor te encaja.</p></div>
+    </div>
+    <div class="schedule-wrap schedule-section" id="horarios">
+      <h3>Horarios apoyo escolar</h3>
+      <div class="schedule-scroll">
+        <table class="support-schedule">
+          <thead><tr><th>Día</th><th>Horario</th><th>Profesor</th><th>Precio</th></tr></thead>
+          <tbody>
+            <tr><td>Lunes</td><td>16:30 a 19:30</td><td>Daniela Lage / Olga Fresco</td><td>Trimestral 2 horas semanales Primaria y ESO: 210 €<br><br>Trimestral 2 horas semanales 3.º, 4.º ESO + Bachillerato: 220 €</td></tr>
+            <tr><td>Martes</td><td>16:30 a 19:30</td><td>Daniela Lage / Olga Fresco</td><td>Trimestral 2 horas semanales Primaria y ESO: 210 €<br><br>Trimestral 2 horas semanales 3.º, 4.º ESO + Bachillerato: 220 €</td></tr>
+            <tr><td>Miércoles</td><td>16:30 a 19:30</td><td>Daniela Lage / Olga Fresco</td><td>Trimestral 2 horas semanales Primaria y ESO: 210 €<br><br>Trimestral 2 horas semanales 3.º, 4.º ESO + Bachillerato: 220 €</td></tr>
+            <tr><td>Jueves</td><td>16:30 a 19:30</td><td>Daniela Lage / Olga Fresco</td><td>Trimestral 2 horas semanales Primaria y ESO: 210 €<br><br>Trimestral 2 horas semanales 3.º, 4.º ESO + Bachillerato: 220 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="schedule-note">Hermanos o primos hermanos: 10% de descuento durante todo el año.*<br><br>Si traes un amiguito, 10% de descuento adicional en el primer trimestre.<br><br>*Si tu hermano o primo no continúa, el descuento no se mantendrá durante el año.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EQUIPO ============ -->
+<section class="sec" id="equipo" style="border-top:2px solid var(--line); border-bottom:2px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill-eyebrow">El equipo</span>
+      <h2>Quién te va a dar clase</h2>
+    </div>
+    <div class="team">
+      <div class="person reveal" data-anim="left">
+        <img class="team-photo" src="assets/images/daniela.jpg" alt="Daniela Lage, directora académica" loading="lazy">
+        <h4>Daniela Lage</h4>
+        <p class="role">Directora académica</p>
+        <p>+20 años enseñando inglés a todas las edades, con titulaciones TKT, CPE, TEFL, CAE y TOEFL. También lidera los cursos de Business English.</p>
+      </div>
+      <div class="person reveal" data-anim="up">
+        <img class="team-photo" src="assets/images/yogesh.jpg" alt="Yogesh, profesor de inglés" loading="lazy">
+        <h4>Yogesh</h4>
+        <p class="role">Profesor, desde 2017</p>
+        <p>Ha dado clase a niños, jóvenes y adultos, también en International House Madrid. Habla inglés y francés con fluidez.</p>
+      </div>
+      <div class="person reveal" data-anim="right">
+        <img class="team-photo" src="assets/images/michelle.jpg" alt="Michelle, profesora y psicóloga" loading="lazy">
+        <h4>Michelle</h4>
+        <p class="role">Profesora · psicóloga</p>
+        <p>Psicóloga con máster en Psicología Clínica y de la Salud. Combina enseñar inglés con más de 10 años de acompañamiento educativo.</p>
+      </div>
+    </div>
+    <p class="team-more reveal" data-anim="up">También dan clase con nosotros Laura Smith, Vittorio di Domenica, Urzsula Tomkiewicsz, Petra Rosendic, Pooja Joyram, Olga Fresco, Stephen Totem, Jim Walter y Asia Hundley: profes nativos y bilingües, titulados y con experiencia en academias, empresas y programas bilingües.</p>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIOS ============ -->
+<section class="sec" id="opiniones">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill-eyebrow">Opiniones</span>
+      <h2>Lo que dicen los que ya están dentro</h2>
+      <div class="review-summary" aria-label="Valoración de la academia">
+        <strong>4,9 sobre 5</strong>
+        <span>Más de 270 reseñas de alumnos y familias</span>
+      </div>
+    </div>
+    <div class="test-grid" id="testGrid"></div>
+    <div class="opinions-video media-card">
+      <div class="video-frame">
+        <img src="assets/images/academy-video.jpg" alt="Vista previa del vídeo de Yes! La Academia">
+        <a class="video-play" href="https://www.youtube.com/watch?v=rV1Dyns_hKo" target="_blank" rel="noopener" aria-label="Ver vídeo de Yes! La Academia">
+          <span aria-hidden="true">▶</span>
+        </a>
+      </div>
+      <p class="video-note">Pulsa para ver el vídeo completo en YouTube.</p>
+    </div>
+    <p style="text-align:center; margin-top:1.8rem; font-size:.85rem;">
+      <a href="https://www.google.es/maps/place/Yes!+La+Academia/@40.4577206,-3.7010758,17z" target="_blank" rel="noopener" style="color:var(--accent); font-weight:800; text-decoration:none;">Ver todas las opiniones en Google Maps →</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill-eyebrow">Confían en nosotros</span>
+      <h2>Empresas y marcas con las que trabajamos</h2>
+      <p>Y también colaboramos con editoriales y entidades del mundo del inglés.</p>
+    </div>
+    <div class="pillrow" style="margin-top:0;"><span>AmRest</span><span>Kantar Media</span><span>Bürkert</span><span>Hispavista</span><span>QSC</span><span>GES</span><span>MPC</span><span>Brainstorm</span><span>Frux</span><span>WAM</span><span>Estrategias</span></div>
+    <div class="pillrow"><span>Cambridge</span><span>Oxford</span><span>Macmillan</span><span>Sodexo</span><span>Campamentos</span></div>
+  </div>
+</section>
+
+<section class="sec" id="blog" style="border-top:2px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head"><span class="pill-eyebrow">Blog</span><h2>Últimos artículos de la academia</h2></div>
+    <div class="blog-grid">
+      <a href="https://inglesmadrid.es/uncategorized/apoyo-escolar-personalizado-cuando-una-ayuda-general-ya-no-basta-y-como-detectarlo-a-tiempo/" target="_blank" rel="noopener"><small>6 oct 2026</small>Apoyo escolar personalizado: cuándo una ayuda general ya no basta</a>
+      <a href="https://inglesmadrid.es/uncategorized/ingles-para-empresas-como-disenar-una-formacion-util-para-equipos-con-distintos-niveles-2/" target="_blank" rel="noopener"><small>5 oct 2026</small>Inglés para empresas: formación útil para equipos con distintos niveles</a>
+      <a href="https://inglesmadrid.es/uncategorized/clases-de-ingles-en-linea-o-presenciales-como-elegir-la-modalidad-que-realmente-te-conviene/" target="_blank" rel="noopener"><small>4 oct 2026</small>Clases en línea o presenciales: cómo elegir la modalidad que te conviene</a>
+      <a href="https://inglesmadrid.es/uncategorized/preparacion-cambridge-en-madrid-como-estudiar-con-estructura-y-confianza-2/" target="_blank" rel="noopener"><small>3 oct 2026</small>Preparación Cambridge en Madrid: cómo estudiar con estructura y confianza</a>
+    </div>
+    <p style="text-align:center;margin-top:1.4rem;"><a href="https://inglesmadrid.es/blog/" target="_blank" rel="noopener" style="color:var(--accent);font-weight:800;text-decoration:none;">Ver todo el blog →</a></p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec faq-section" id="faq">
+  <div class="wrap faq-grid">
+    <div class="sec-head">
+      <span class="pill-eyebrow">Preguntas frecuentes</span>
+      <h2>Resolvemos tus dudas antes de empezar</h2>
+      <p>Si no encuentras lo que buscas, escríbenos y te ayudamos personalmente.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">¿Para qué edades hay clases?<span aria-hidden="true">+</span></button></h3>
+        <div class="faq-answer" id="faq-answer-1" hidden><p>Tenemos grupos para niños, adolescentes y adultos, además de apoyo escolar, clases particulares y formación para empresas.</p></div>
+      </div>
+      <div class="faq-item">
+        <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">¿La prueba de nivel es gratuita?<span aria-hidden="true">+</span></button></h3>
+        <div class="faq-answer" id="faq-answer-2" hidden><p>Sí. La prueba es gratuita y sin compromiso. Nos permite recomendarte el grupo y el nivel más adecuados.</p></div>
+      </div>
+      <div class="faq-item">
+        <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">¿Las clases son presenciales u online?<span aria-hidden="true">+</span></button></h3>
+        <div class="faq-answer" id="faq-answer-3" hidden><p>Ofrecemos clases presenciales en Tetuán y también opciones online, según el curso y tus necesidades.</p></div>
+      </div>
+      <div class="faq-item">
+        <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">¿Preparáis exámenes oficiales de Cambridge?<span aria-hidden="true">+</span></button></h3>
+        <div class="faq-answer" id="faq-answer-4" hidden><p>Sí. Preparamos PET, FCE, CAE, CPE, IELTS y otras certificaciones con seguimiento y práctica específica de examen.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="sec" id="contacto" style="border-top:2px solid var(--line);">
+  <div class="wrap contact-grid">
+    <div class="reveal" data-anim="left">
+      <span class="pill-eyebrow">Contacto</span>
+      <h2 style="font-size:clamp(1.7rem,2.4vw + .5rem,2.3rem); margin-top:.8rem;">Ven a vernos o mándanos un mensaje</h2>
+      <p class="contact-intro">Cuéntanos qué necesitas y te orientamos para encontrar el curso, nivel y horario que mejor encajan contigo.</p>
+      <a class="contact-whatsapp" href="https://wa.me/34692175578?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20clases%20y%20la%20prueba%20de%20nivel%20gratuita." target="_blank" rel="noopener">Escribir por WhatsApp <span aria-hidden="true">→</span></a>
+      <dl class="info-list">
+        <dt>Dirección</dt>
+        <dd>Calle Lazaga, 9 (esquina San Germán)<br>28020 Madrid · Metro Tetuán-Cuzco</dd>
+        <dt>Teléfono (WhatsApp en los dos números)</dt>
+        <dd><a href="tel:+34910160934">910 160 934</a> · <a href="https://wa.me/34692175578" target="_blank" rel="noopener">692 175 578</a></dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:info@inglesmadrid.es">info@inglesmadrid.es</a></dd>
+        <dt>Horario de clases</dt>
+        <dd>Mañanas 10:00–13:00 · Tardes 16:00–22:00</dd>
+        <dt>Atención al público</dt>
+        <dd>Lunes a jueves, 16:30–21:00 · Viernes solo por teléfono · Fin de semana cerrado</dd>
+      </dl>
+      <div class="socials">
+        <a href="https://www.facebook.com/YesLaAcademia" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/yeslaacademia/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://es.linkedin.com/company/yes-la-academia" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://www.youtube.com/user/YesAcademia" target="_blank" rel="noopener" aria-label="YouTube"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+    </div>
+
+    <div class="form-card reveal" data-anim="right">
+      <span class="form-kicker">Primer paso</span>
+      <h3>Reserva tu prueba de nivel</h3>
+      <p class="small">Rellena esto y lo mandamos directo por WhatsApp a la academia.</p>
+      <form id="leadForm">
+        <div class="field"><label for="f-nombre">Nombre</label><input id="f-nombre" type="text" required placeholder="Tu nombre"></div>
+        <div class="field"><label for="f-tel">Teléfono</label><input id="f-tel" type="tel" required placeholder="600 000 000"></div>
+        <div class="field">
+          <label for="f-curso">Me interesa</label>
+          <select id="f-curso">
+            <option>Inglés para niños/adolescentes</option>
+            <option>Apoyo escolar</option>
+            <option>Inglés para adultos</option>
+            <option>Clases particulares</option>
+            <option>Conversación</option>
+            <option>Exámenes de Cambridge</option>
+            <option>Inglés para empresas</option>
+            <option>Business English Bootcamp</option>
+            <option>Otro idioma (francés, alemán, italiano, chino)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Enviar por WhatsApp</button>
+        <p class="form-note">Se abre WhatsApp con tu mensaje ya escrito, listo para mandar al 692 175 578.</p>
+        <div class="form-ok" id="formOk">¡Casi! Confirma el envío en WhatsApp.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="map-card">
+      <div id="academy-map" role="application" aria-label="Mapa interactivo de Yes! La Academia, Calle Lazaga 9, Madrid"></div>
+      <a class="map-link" href="https://www.openstreetmap.org/?mlat=40.4577206&mlon=-3.7010758#map=17/40.4577206/-3.7010758" target="_blank" rel="noopener">Abrir mapa interactivo <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="wrap footer-cta-inner">
+    <div>
+      <span class="pill-eyebrow">¿Hablamos?</span>
+      <h2>Tu próximo paso empieza con una prueba de nivel.</h2>
+    </div>
+    <a class="btn btn-primary" href="#contacto">Contactar ahora</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <img src="assets/images/logo.png" alt="Logo de Yes! La Academia" style="width:110px; border-radius:18px; box-shadow:var(--shadow-pop);">
+      <p style="color:var(--ink-soft); font-size:.9rem; max-width:34ch; margin-top:.8rem;">Academia de idiomas en Tetuán, Madrid. Inglés para niños, adolescentes, adultos y empresas desde 2009.</p>
+    </div>
+    <div>
+      <h5>Academia</h5>
+      <a href="#cursos">Cursos</a>
+      <a href="#cambridge">Exámenes oficiales</a><a href="#garantia">Garantía de aprobado</a><a href="#blog">Blog</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#opiniones">Opiniones</a>
+    </div>
+    <div>
+      <h5>Contacto</h5>
+      <a href="tel:+34910160934">910 160 934</a>
+      <a href="https://wa.me/34692175578" target="_blank" rel="noopener">692 175 578 (WhatsApp)</a>
+      <a href="mailto:info@inglesmadrid.es">info@inglesmadrid.es</a>
+      <a href="https://www.google.es/maps/place/Yes!+La+Academia/@40.4577206,-3.7010758,17z" target="_blank" rel="noopener">Lazaga 9, Tetuán, Madrid</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© <span id="year"></span> Yes! La Academia</span>
+    <span><a href="https://inglesmadrid.es/politica-privacidad/" target="_blank" rel="noopener" style="color:inherit;">Política de privacidad</a> · Hecha con Yes! en Tetuán</span>
+  </div>
+</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/main.js?v=leaflet-map"></script>
+</body>
+</html>
